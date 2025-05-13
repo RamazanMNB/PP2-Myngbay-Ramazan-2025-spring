@@ -1,17 +1,94 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Консультация</title>
+    <meta charset="UTF-8">
+    <title>Консультация</title>
+    <link rel="stylesheet" href="consultaion.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Скрываем полосы прокрутки, если видео больше окна */
+        }
+
+        #background-video {
+            position: fixed; /* Фиксированное положение относительно окна браузера */
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1; /* Помещаем видео на задний план */
+        }
+
+        .content {
+            position: relative; /* Чтобы контент был поверх видео */
+            z-index: 1;
+            padding: 20px;
+            text-align: center;
+            color: white; /* Белый текст для контраста с видео */
+            /* Добавь другие стили для своего контента */
+        }
+
+        h1, p, ul {
+            background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для лучшей читаемости текста на видео */
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .btn {
+            /* Сохраняем стили кнопок, но можем немного изменить для лучшего вида на видео */
+            display: inline-block;
+            padding: 12px 25px;
+            text-decoration: none;
+            color: white; /* Белый текст на кнопках */
+            background-color: rgba(255, 193, 7, 0.8); /* Полупрозрачный желтый */
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border: 2px solid rgba(255, 193, 7, 0.8);
+        }
+
+        .btn:hover {
+            background-color: rgba(224, 168, 0, 0.9);
+            border-color: rgba(224, 168, 0, 0.9);
+        }
+
+        .btn[href*="mailto"] {
+            background-color: rgba(0, 123, 255, 0.8); /* Полупрозрачный синий */
+            border-color: rgba(0, 123, 255, 0.8);
+        }
+
+        .btn[href*="mailto"]:hover {
+            background-color: rgba(0, 86, 179, 0.9);
+            border-color: rgba(0, 86, 179, 0.9);
+        }
+
+        .btn[href^="tel"] {
+            background-color: rgba(40, 167, 69, 0.8); /* Полупрозрачный зеленый */
+            border-color: rgba(40, 167, 69, 0.8);
+        }
+
+        .btn[href^="tel"]:hover {
+            background-color: rgba(30, 126, 52, 0.9);
+            border-color: rgba(30, 126, 52, 0.9);
+        }
+    </style>
 </head>
 <body>
-  <h1>Свяжитесь с нами</h1>
-  <p>Выберите удобный способ связи:</p>
+    <video autoplay muted loop id="background-video">
+        <source src="фон.mp4" type="video/mp4">
+        Ваш браузер не поддерживает HTML5 видео.
+    </video>
 
-  <ul>
-    <li><a href="mailto:ramazanfcr4@gmail.com?subject=Консультация&body=Здравствуйте, прошу связаться со мной по поводу ИТ-услуг." class="btn">Написать на Емайл</a></li>
-    <li><a href="tel:+77789058677">Позвонить: +7 778 905 8677</a></li>
-    
-  </ul>
+    <div class="content">
+        <h1>Свяжитесь с нами</h1>
+        <p>Выберите удобный способ связи:</p>
+
+        <ul>
+            <li><a href="https://outlook.office.com/mail/deeplink/compose?to=ramazanfcr4@gmail.com&subject=Консультация&body=Здравствуйте,%20прошу%20связаться%20со%20мной" class="btn">По электронной почте</a></li>
+            <li><a href="tel:+77789058677" class="btn">Позвонить: +7 778 905 8677</a></li>
+        </ul>
+    </div>
 </body>
 </html>

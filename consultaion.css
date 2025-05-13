@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Скрываем полосы прокрутки, если видео больше окна */
+    font-family: sans-serif; /* Добавляем базовый шрифт */
+    background-color: #f4f4f4; /* Запасной цвет фона, если видео не загрузится */
+    color: white; /* Белый цвет текста по умолчанию для лучшего контраста с видео */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Центрируем контент по вертикали */
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 20px; /* Добавляем немного внутреннего отступа */
+}
+
+#background-video {
+    position: fixed; /* Фиксированное положение */
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* На задний план */
+}
+
+.content {
+    position: relative; /* Чтобы z-index работал */
+    z-index: 1; /* Поверх видео */
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для читаемости */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Центрируем кнопки */
+}
+
+li {
+    margin: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(255, 193, 7, 0.8); /* Полупрозрачный желтый */
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: 2px solid rgba(255, 193, 7, 0.8);
+}
+
+.btn:hover {
+    background-color: rgba(224, 168, 0, 0.9);
+    border-color: rgba(224, 168, 0, 0.9);
+}
+
+.btn[href*="mailto"] {
+    background-color: rgba(0, 123, 255, 0.8); /* Полупрозрачный синий */
+    border-color: rgba(0, 123, 255, 0.8);
+}
+
+.btn[href*="mailto"]:hover {
+    background-color: rgba(0, 86, 179, 0.9);
+    border-color: rgba(0, 86, 179, 0.9);
+}
+
+.btn[href^="tel"] {
+    background-color: rgba(40, 167, 69, 0.8); /* Полупрозрачный зеленый (можешь заменить на синий) */
+    border-color: rgba(40, 167, 69, 0.8);
+}
+
+.btn[href^="tel"]:hover {
+    background-color: rgba(30, 126, 52, 0.9);
+    border-color: rgba(30, 126, 52, 0.9);
+}
