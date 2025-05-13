@@ -160,7 +160,7 @@ snake.get_player_name()
 score, level = load_last_score(snake.player_name)  # Загружаем результат из базы
 print(f"Player: {snake.player_name} | exist с: score={score}, level={level}")
 food = Food()
-speed = 10 + level  # чтобы скорость соответствовала уровню
+speed = 6 + level  # чтобы скорость соответствовала уровню
 
 # Главный игровой цикл
 clock = pygame.time.Clock()
